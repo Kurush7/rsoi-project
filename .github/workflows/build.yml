@@ -47,7 +47,6 @@ jobs:
           kubectl config use-context default
 
           kubectl get pods
-          cd k8s
           helm delete services && helm install services ./services-chart
 
           sleep 20
