@@ -40,11 +40,9 @@ docker_build_but_files:
 	docker build -t kurushpondoxocrow/qrook_scout:$(version) -f ScoutServiceDockerfile .
 	docker build -t kurushpondoxocrow/qrook_auth:$(version) -f AuthServiceDockerfile .
 	docker build -t kurushpondoxocrow/qrook_api:$(version) -f APIServiceDockerfile .
-	docker build -t kurushpondoxocrow/qrook_postgres:$(version) -f PostgresDockerfile .
 
 docker_push_but_files:
 	docker push kurushpondoxocrow/qrook_search:$(version)
 	docker push kurushpondoxocrow/qrook_scout:$(version)
 	docker push  kurushpondoxocrow/qrook_auth:$(version)
 	docker push kurushpondoxocrow/qrook_api:$(version)
-	docker push kurushpondoxocrow/qrook_postgres:$(version)
