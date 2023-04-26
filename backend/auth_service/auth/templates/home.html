@@ -1,0 +1,31 @@
+{% if user %}
+  <style>pre{white-space:wrap}</style>
+<div>Пользователь: <strong>{{user}}</strong></div>
+
+{% if is_admin %}
+<a>(Администратор)</a>
+
+{% endif %}
+
+<br><div>Выданы следующие разрешения:</div>
+{% for client in clients %}
+<pre>
+  клиент = {{client.client_metadata.client_name}}
+  адрес = {{client.client_metadata.client_uri}}
+  разрешения = {{client.client_metadata.scope}}
+</pre>
+<hr>
+{% endfor %}
+
+<br><a href="{{ url_for('.logout') }}">Выйти</a>
+
+{% else %}
+<div>Not logged in</div>
+<br><a href="{{ url_for('.login') }}">Войти</a>
+
+{% endif %}
+
+{% if is_admin %}
+<br><a href="{{ url_for('.create_client') }}">Добавить клиента</a>
+<br><a href="{{ url_for('.create_user') }}">Добавить пользователя</a>
+{% endif %}
