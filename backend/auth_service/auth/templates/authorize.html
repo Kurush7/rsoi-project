@@ -1,0 +1,25 @@
+<p>{{grant.client.client_name}} запрашивает следующие разрешения:
+    <strong>{{ grant.request.scope }}</strong>
+</p>
+
+<form action="" method="post">
+    {% if not user %}
+    <div>Вы не вошли в систему</div>
+    <br><a href="{{ url_for('local_routes.login') }}">Войти</a>
+    {% else %}
+    <label>
+        <p>(Пользователь: <strong>{{ user.login }}</strong>)</p>
+        <input type="checkbox" name="confirm" id="check_confirm" onchange="document.getElementById('confirm_btn').disabled = !this.checked;">
+        <span>Разрешить?</span>
+    </label>
+
+    <br>
+    <button id="confirm_btn">Подтвердить</button>
+    {% endif %}
+</form>
+
+<br><a href="{{ url_for('local_routes.home') }}">На главную</a>
+
+<script type="text/javascript">
+document.getElementById('confirm_btn').disabled=!document.getElementById('check_confirm').checked;
+</script>
