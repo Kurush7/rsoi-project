@@ -16,10 +16,10 @@ services:
 
 database:
   connector: postgres
-  dbname: qrook_db_new
+  dbname: qrook_test
   username: kurush
   password: pondoxo
-  host: qrook_postgres
+  host: localhost
   port: 5432
   logging:
     logger_name: DatabaseLogger

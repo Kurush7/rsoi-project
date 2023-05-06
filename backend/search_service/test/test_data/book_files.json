@@ -1,0 +1,15 @@
+[{
+  "publication_id": 1,
+  "file_path": "file1.pdf",
+  "file_type": "pdf"
+},
+{
+  "publication_id": 2,
+  "file_path": "file2.pdf",
+  "file_type": "pdf"
+},
+{
+  "publication_id": 3,
+  "file_path": "file3.pdf",
+  "file_type": "pdf"
+}]

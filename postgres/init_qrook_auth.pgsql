@@ -216,8 +216,8 @@ ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('public.user_
 --
 
 COPY public.oauth2_client (id, client_id, client_secret, client_id_issued_at, client_secret_expires_at, client_metadata) FROM stdin;
-1	pRiDvVWqbMdVcqUcubD0Y54V	tMWy9xDK6CaCe6LfqpO3BIqkjVgm8eEUnMLAdHaV5IO32Riu	1682255337	0	{"client_name":"qrook","client_uri":"https://authlib.org","grant_types":["authorization_code"],"redirect_uris":["http://localhost:8080/auth_callback"],"response_types":["code"],"scope":"openid profile email","token_endpoint_auth_method":"client_secret_basic"}
-2	2anATLPeTFWid8WXq5rKm964	WD2QLXYSn5xHT9PoeYNLfQGUWlYSGEfB4LKNppg5eUcAN5XT	1682255392	0	{"client_name":"dummy_client","client_uri":"https://example.com","grant_types":["authorization_code"],"redirect_uris":["https://example.com"],"response_types":["code"],"scope":"openid","token_endpoint_auth_method":"client_secret_basic"}
+1	pRiDvVWqbMdVcqUcubD0Y54V	tMWy9xDK6CaCe6LfqpO3BIqkjVgm8eEUnMLAdHaV5IO32Riu	1682255337	0	{"client_name":"qrook","client_uri":"http://kurush7.cloud.okteto.net","grant_types":["authorization_code"],"redirect_uris":["http://kurush7.cloud.okteto.net/auth_callback"],"response_types":["code"],"scope":"openid profile email","token_endpoint_auth_method":"client_secret_basic"}
+2	2anATLPeTFWid8WXq5rKm964	WD2QLXYSn5xHT9PoeYNLfQGUWlYSGEfB4LKNppg5eUcAN5XT	1682255392	0	{"client_name":"dummy_client","client_uri":"http://kurush7.cloud.okteto.net","grant_types":["authorization_code"],"redirect_uris":["https://example.com"],"response_types":["code"],"scope":"openid","token_endpoint_auth_method":"client_secret_basic"}
 \.
 
 

@@ -1,13 +1,3 @@
-GRANT pg_read_all_data TO guest;
-GRANT pg_write_all_data TO guest;
-
-GRANT pg_read_all_data TO moderator;
-GRANT pg_write_all_data TO moderator;
-
-GRANT pg_read_all_data TO reader;
-GRANT pg_write_all_data TO reader;
-
-
 create table if not exists authors
 (
     id          integer generated always as identity
@@ -73,19 +63,19 @@ create table if not exists book_files
 );
 
 
-create table if not exists users
-(
-    id         serial not null
-        constraint users_pkey primary key,
-    created_at timestamp with time zone default current_timestamp,
-    updated_at timestamp with time zone default current_timestamp,
-    name       varchar(256),
-    surname    varchar(256),
-    email      varchar(64),
-    login      varchar(64),
-    password   varchar(64),
-    avatar     varchar
-);
+-- create table if not exists users
+-- (
+--     id         serial not null
+--         constraint users_pkey primary key,
+--     created_at timestamp with time zone default current_timestamp,
+--     updated_at timestamp with time zone default current_timestamp,
+--     name       varchar(256),
+--     surname    varchar(256),
+--     email      varchar(64),
+--     login      varchar(64),
+--     password   varchar(64),
+--     avatar     varchar
+-- );
 
 create table if not exists books_authors
 (
@@ -104,20 +94,20 @@ create table if not exists books_series
     book_number smallint
 );
 
-create table if not exists intelligence
-(
-    id    integer generated always as identity,
-    time  timestamp with time zone default current_timestamp,
-    event varchar(100) not null,
-    data  jsonb
-);
-
-create table if not exists recent_viewed
-(
-    id          integer generated always as identity,
-    user_id     integer
-        constraint recent_viewed_user_id_fkey references users,
-    entity_id   integer,
-    entity_type varchar(128),
-    time        timestamp with time zone default current_timestamp
-);
+-- create table if not exists intelligence
+-- (
+--     id    integer generated always as identity,
+--     time  timestamp with time zone default current_timestamp,
+--     event varchar(100) not null,
+--     data  jsonb
+-- );
+--
+-- create table if not exists recent_viewed
+-- (
+--     id          integer generated always as identity,
+--     user_id     integer
+--         constraint recent_viewed_user_id_fkey references users,
+--     entity_id   integer,
+--     entity_type varchar(128),
+--     time        timestamp with time zone default current_timestamp
+-- );
