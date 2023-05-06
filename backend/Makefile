@@ -1,5 +1,9 @@
 test: unit_tests integration_tests e2e_tests
 
+test_dependencies:
+	pip install -r search_service/requirements.txt
+	pip install pytest
+
 unit_tests:
 	pytest -m unit .
 integration_tests:
